@@ -1,0 +1,25 @@
+{
+    "explorer.compactFolders": false,
+    "editor.fontSize": 20,
+    "terminal.integrated.fontSize": 20,
+    "workbench.colorTheme": "OM Theme (Default Dracula Italic)",
+    "workbench.iconTheme": "material-icon-theme",
+    "code-runner.executorMap": {
+        
+        "python": "cls ; python -u",
+        
+    },
+    "code-runner.runInTerminal": true,
+    "code-runner.ignoreSelection": true,
+    "python.defaultInterpreterPath": "python",
+    "[python]": {
+        "editor.formatOnType": true
+    },
+    "liveServer.settings.donotVerifyTags": true,
+    "liveServer.settings.donotShowInfoMsg": true,
+    "editor.wordWrap": "on",
+    "files.autoSave": "afterDelay",
+    "json.schemas": [
+        
+    ]
+}
