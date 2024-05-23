@@ -1,7 +1,8 @@
-from blog.models import Category, Tag, Page, Post
+from blog.models import Category, Page, Post, Tag
 from django.contrib import admin
-from django_summernote.admin import SummernoteModelAdmin
 from django.utils.safestring import mark_safe
+from django_summernote.admin import SummernoteModelAdmin
+
 
 @admin.register(Tag)
 class TagAdmin(admin.ModelAdmin):
@@ -11,7 +12,7 @@ class TagAdmin(admin.ModelAdmin):
     list_per_page = 10
     ordering = '-id',
     prepopulated_fields = {
-        'slug': ('name',),
+        "slug": ('name',),
     }
 
 
@@ -25,6 +26,7 @@ class CategoryAdmin(admin.ModelAdmin):
     prepopulated_fields = {
         "slug": ('name',),
     }
+
 
 @admin.register(Page)
 class PageAdmin(SummernoteModelAdmin):
@@ -73,8 +75,8 @@ class PostAdmin(SummernoteModelAdmin):
 
     def save_model(self, request, obj, form, change):
         if change:
-            obj.updated_by = request.user
+            obj.updated_by = request.user  # type: ignore
         else:
-            obj.created_by = request.user
+            obj.created_by = request.user  # type: ignore
 
         obj.save()
